@@ -78,7 +78,10 @@ python modelSave.py
 
 ---
 
-## Dataset
+## <a href="https://www.kaggle.com/datasets/kushagra3204/cricket-ball-dataset-for-yolo" target="_blank">Dataset</a>
+```
+https://www.kaggle.com/datasets/kushagra3204/cricket-ball-dataset-for-yolo
+```
 The dataset includes 1778 annotated images in YOLOv8 format, created by extracting frames from cricket videos using LabelImg.
 
 ### Key Features:
