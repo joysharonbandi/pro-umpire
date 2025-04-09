@@ -77,36 +77,36 @@ while ret:
                 cv2.circle(frame,(centroid_x, centroid_y),radius=3,color=(0,0,255),thickness=-1)
                 cv2.rectangle(frame,(int(x1),int(y1)),(int(x2),int(y2)),(0,0,255),2)
                 
-        if len(centroid_history) > 1:
-            centroid_list = list(centroid_history.get_queue())
-            for i in range(1, len(centroid_history)):
-                # if math.sqrt(y_diff**2+x_diff**2)<7:
-                cv2.line(frame, centroid_history.get_queue()[i-1], centroid_history.get_queue()[i], (255, 0, 0), 4)    
+        # if len(centroid_history) > 1:
+        #     centroid_list = list(centroid_history.get_queue())
+        #     for i in range(1, len(centroid_history)):
+        #         # if math.sqrt(y_diff**2+x_diff**2)<7:
+        #         cv2.line(frame, centroid_history.get_queue()[i-1], centroid_history.get_queue()[i], (255, 0, 0), 4)    
                 
-        if len(centroid_history) > 1:
-            centroid_list = list(centroid_history.get_queue())
-            x_diff = centroid_list[-1][0] - centroid_list[-2][0]
-            y_diff = centroid_list[-1][1] - centroid_list[-2][1]
-            if(x_diff!=0):
-                m1 = y_diff/x_diff
-                if m1==1:
-                    angle = 90
-                elif m1!=0:
-                    angle = 90-angle_between_lines(m1)
-                if angle>=45:
-                        print("ball bounced")
-            future_positions = [centroid_list[-1]]
-            for i in range(1, 5):
-                future_positions.append(
-                    (
-                        centroid_list[-1][0] + x_diff * i,
-                        centroid_list[-1][1] + y_diff * i
-                    )
-                )
-            print("Future Positions: ",future_positions)
-            for i in range(1,len(future_positions)):
-                cv2.line(frame, future_positions[i-1], future_positions[i], (0, 255, 0), 4)
-                cv2.circle(frame,future_positions[i],radius=3,color=(0,0,255),thickness=-1)
+        # if len(centroid_history) > 1:
+        #     centroid_list = list(centroid_history.get_queue())
+        #     x_diff = centroid_list[-1][0] - centroid_list[-2][0]
+        #     y_diff = centroid_list[-1][1] - centroid_list[-2][1]
+        #     if(x_diff!=0):
+        #         m1 = y_diff/x_diff
+        #         if m1==1:
+        #             angle = 90
+        #         elif m1!=0:
+        #             angle = 90-angle_between_lines(m1)
+        #         if angle>=45:
+        #                 print("ball bounced")
+        #     future_positions = [centroid_list[-1]]
+        #     for i in range(1, 5):
+        #         future_positions.append(
+        #             (
+        #                 centroid_list[-1][0] + x_diff * i,
+        #                 centroid_list[-1][1] + y_diff * i
+        #             )
+        #         )
+        #     print("Future Positions: ",future_positions)
+        #     for i in range(1,len(future_positions)):
+        #         cv2.line(frame, future_positions[i-1], future_positions[i], (0, 255, 0), 4)
+        #         cv2.circle(frame,future_positions[i],radius=3,color=(0,0,255),thickness=-1)
                 
 
         text = "Angle: {:.2f} degrees".format(angle)
