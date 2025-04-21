@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ball Tracking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .video-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #video-feed {
+            max-width: 100%;
+            border: 1px solid #ddd;
+        }
+        .controls {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .control-group {
+            margin-bottom: 15px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        .switch-label {
+            margin-left: 10px;
+            position: relative;
+            top: -10px;
+        }
+        .switch-container {
+            margin-bottom: 10px;
+        }
+        .highlight {
+            background-color: #f9f9c5;
+            padding: 10px;
+            border-left: 4px solid #ffd700;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ball Tracking System</h1>
+        
+        <div class="controls">
+            <h2>Video Controls</h2>
+            <div class="control-group">
+                <input type="text" id="video-path" placeholder="Enter path to video file" value="videos/7.mp4">
+                <button id="open-video">Open Video</button>
+                <button id="toggle-pause">Pause/Play</button>
+                <button id="save-data">Save Tracking Data</button>
+                <button id="stop-video">Stop Video</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <h2>Bowling Detection</h2>
+            <div class="highlight">
+                <strong>New Feature:</strong> The system now detects new bowls and can clear previous ball paths automatically.
+            </div>
+            <div class="switch-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="toggle-clear-paths" checked>
+                    <span class="slider"></span>
+                </label>
+                <span class="switch-label">Clear paths on new bowls</span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <h2>Overlay Controls</h2>
+            <div class="control-group">
+                <div class="switch-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-bounding-boxes" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="switch-label">Bounding Boxes</span>
+                </div>
+                
+                <div class="switch-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-centroids" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="switch-label">Centroids</span>
+                </div>
+                
+                <div class="switch-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-trajectories" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="switch-label">Trajectories</span>
+                </div>
+                
+                <div class="switch-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-angles" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="switch-label">Angles</span>
+                </div>
+                
+                <div class="switch-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-ball-ids" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="switch-label">Ball IDs</span>
+                </div>
+                
+                <div class="switch-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="toggle-stats" checked>
+                        <span class="slider"></span>
+                    </label>
+                    <span class="switch-label">Statistics</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="video-container">
+            <img id="video-feed" src="/video_feed" alt="Video Feed">
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('open-video').addEventListener('click', function() {
+            const videoPath = document.getElementById('video-path').value;
+            fetch('/open_video', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ video_path: videoPath }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Video opened:', data.video_info);
+                    // Reset video feed src to refresh stream
+                    document.getElementById('video-feed').src = '/video_feed?' + new Date().getTime();
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            });
+        });
+        
+        document.getElementById('toggle-pause').addEventListener('click', function() {
+            fetch('/toggle_pause', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Pause toggled:', data);
+            });
+        });
+        
+        document.getElementById('save-data').addEventListener('click', function() {
+            const outputPath = prompt('Enter output path for tracking data:', 'tracking_data.json');
+            if (outputPath) {
+                fetch('/save_data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ output_path: outputPath }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Tracking data saved successfully');
+                    } else {
+                        alert('Error saving tracking data');
+                    }
+                });
+            }
+        });
+        
+        document.getElementById('stop-video').addEventListener('click', function() {
+            fetch('/stop_video', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Video stopped:', data);
+            });
+        });
+        
+        // Setup toggle switches
+        function setupToggleSwitch(id, endpoint, setting) {
+            const toggle = document.getElementById(id);
+            toggle.addEventListener('change', function() {
+                fetch('/toggle_overlay', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ setting: setting, value: this.checked }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(`${setting} toggled:`, data);
+                });
+            });
+        }
+
+        // Setup all toggle switches
+        setupToggleSwitch('toggle-bounding-boxes', '/toggle_overlay', 'bounding_boxes');
+        setupToggleSwitch('toggle-centroids', '/toggle_overlay', 'centroids');
+        setupToggleSwitch('toggle-trajectories', '/toggle_overlay', 'trajectories');
+        setupToggleSwitch('toggle-angles', '/toggle_overlay', 'angles');
+        setupToggleSwitch('toggle-ball-ids', '/toggle_overlay', 'ball_ids');
+        setupToggleSwitch('toggle-stats', '/toggle_overlay', 'stats');
+        setupToggleSwitch('toggle-clear-paths', '/toggle_overlay', 'clear_paths');
+
+        // Auto-start with default video when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const defaultVideoPath = document.getElementById('video-path').value;
+            if (defaultVideoPath) {
+                fetch('/open_video', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ video_path: defaultVideoPath }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log('Default video opened:', data.video_info);
+                    } else {
+                        console.error('Error opening default video:', data.error);
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

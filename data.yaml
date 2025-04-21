@@ -1,6 +1,24 @@
-path: C:/Users/Kushagra Agarwal/Desktop/Image-Processing/Ball Tracking/cricket_ball_data
-train: train/images
-val: valid/images
+# path: /Users/joysharon/Documents/Projects/trajectory/Cricket-Ball-Trajectory-Prediction  # Using relative path since we're in the project directory
+# # train: runs/detect/train
+# # val: runs/detect/valid
 
-names: 
-  0: cricketBall
+# train: Cricket-Ball-Tracker.v2i.yolov8/train
+# val: Cricket-Ball-Tracker.v2i.yolov8/valid
+# test: Cricket-Ball-Tracker.v2i.yolov8/test
+
+# names:
+#   0: cricketBall
+# Cricket-Ball-Tracker.v2i.yolov8
+
+
+path: /content/pro-umpire/Cricket-Ball-Trajectory-Prediction
+train: Cricket-Ball-Tracker.v2i.yolov8/train/images
+val: Cricket-Ball-Tracker.v2i.yolov8/valid/images
+test: Cricket-Ball-Tracker.v2i.yolov8/test/images
+
+nc: 2
+names: ['0', 'Batsman']# Update class names based on your actual classes
+
+# Optional configurations
+single_cls: false  # multiple classes
+  
