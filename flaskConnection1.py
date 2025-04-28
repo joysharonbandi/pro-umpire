@@ -27,6 +27,13 @@ model_path = os.path.join('runs', 'detect', 'train9', 'weights', 'best.pt')
 model = YOLO(model_path)  # Use a smaller model for faster processing
 print("Model loaded successfully")
 
+def calculate_distance(point1, point2):
+    """Calculate Euclidean distance between two points"""
+    import math
+    if(point1 is not None and point2 is not None):
+        return math.sqrt((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2)
+    else:
+        return None
 class FixedSizeQueue:
     def __init__(self, max_size):
         self.queue = deque(maxlen=max_size)
@@ -178,12 +185,16 @@ def process_video(video_path, output_json_path, pixels_per_meter=100, video_id=N
             "bowledBowls":[],
             "frames": {},
             "balls": [],
+            "bowlingMaxLength":[]
         }
         
         frame_idx = 0
         centroid_history = FixedSizeQueue(10)
         no_detection_count = 0
         current_ball_centroids = []
+        distance_history = []
+        max_distance_percent = 0
+        max_distance_position = None
         
         # Process every 3rd frame for speed
         frame_step = 3
@@ -221,9 +232,26 @@ def process_video(video_path, output_json_path, pixels_per_meter=100, video_id=N
                     centroid_history.add((centroid_x, centroid_y))
                     frame_data["centroids"].append([centroid_x, centroid_y])
                     frame_data["bounding_boxes"].append([int(x1), int(y1), int(x2), int(y2)])
+
+
+
+                    frame_height = frame.shape[0]
+                    top_portion_height = frame_height * 0.70
+
+                    if centroid_y <= top_portion_height:
+                        distance_from_top = centroid_y
+                        distance_percent = (distance_from_top / top_portion_height) * 100
+                        distance_history.append(distance_percent)
+
+                        if distance_percent > max_distance_percent:
+                            max_distance_percent = distance_percent
+                            max_distance_position = (centroid_x, centroid_y)
+
+
                     
                     # Add to current ball centroids
                     current_ball_centroids.append([centroid_x, centroid_y, frame_idx])
+                    print(current_ball_centroids,"centroids123 ")
                 
                 # Reset no detection counter since we found objects
                 no_detection_count = 0
@@ -234,8 +262,13 @@ def process_video(video_path, output_json_path, pixels_per_meter=100, video_id=N
                 # If we've had multiple frames with no detection and we have data for the current trajectory,
                 # save this trajectory and prepare for the next one
                 if no_detection_count > 15 and len(current_ball_centroids) > 0:
+                    
                     tracking_data["balls"].append(current_ball_centroids)
                     tracking_data["bowledBowls"].append(current_ball_centroids)
+                    tracking_data["bowlingMaxLength"].append(calculate_distance((310,421),max_distance_position))
+                    distance_history = []
+                    max_distance_percent = 0
+                    max_distance_position = None
                     current_ball_centroids = []
                     centroid_history.clear()
             

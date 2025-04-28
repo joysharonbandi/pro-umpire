@@ -243,7 +243,7 @@ def calibrate_pixels_per_meter(video_path):
         return None
     
     # Resize for display
-    frame_resized = cv2.resize(frame, (1000, 600))
+    frame_resized = cv2.resize(frame, (480, 848))
     
     # Instructions
     print("CALIBRATION: Click two points with a known distance between them")
@@ -301,7 +301,7 @@ def calibrate_pixels_per_meter(video_path):
     cv2.destroyAllWindows()
     return pixels_per_meter
 if __name__ == "__main__":
-    video_path = os.path.join('videos', 'test1.mp4')
+    video_path = os.path.join('videos', 'ball.mov')
     model_path = os.path.join('runs', 'detect', 'train5', 'weights', 'best.pt')
     tracking_data_path = 'ball_tracking_data.json'
     
