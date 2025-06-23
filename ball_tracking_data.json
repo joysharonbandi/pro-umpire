@@ -1,1 +1,3676 @@
-{"video_info": {"fps": 30.0, "frame_count": 83, "width": 640, "height": 360}, "frames": {"0": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "1": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "2": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "3": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "4": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "5": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "6": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "7": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "8": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "9": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "10": {"centroids": [], "bounding_boxes": [], "future_positions": [], "angle": 0, "speed": 0}, "11": {"centroids": [[353, 167]], "bounding_boxes": [[349, 163, 357, 171]], "future_positions": [], "angle": 0, "speed": 0}, "12": {"centroids": [[346, 171]], "bounding_boxes": [[341, 167, 351, 176]], "future_positions": [[339, 175], [332, 179], [325, 183], [318, 187]], "angle": 15.255118703057775, "speed": 8.707238368162434}, "13": {"centroids": [[346, 171]], "bounding_boxes": [[341, 167, 351, 176]], "future_positions": [[346, 171], [346, 171], [346, 171], [346, 171]], "angle": 0, "speed": 0.0}, "14": {"centroids": [[340, 178]], "bounding_boxes": [[335, 174, 345, 182]], "future_positions": [[334, 185], [328, 192], [322, 199], [316, 206]], "angle": 4.398705354995542, "speed": 9.957108013876319}, "15": {"centroids": [[334, 186]], "bounding_boxes": [[329, 182, 339, 190]], "future_positions": [[328, 194], [322, 202], [316, 210], [310, 218]], "angle": 8.130102354155966, "speed": 10.8}, "16": {"centroids": [[330, 195]], "bounding_boxes": [[325, 191, 334, 199]], "future_positions": [[326, 204], [322, 213], [318, 222], [314, 231]], "angle": 21.037511025421807, "speed": 10.636766425939793}, "17": {"centroids": [[326, 206]], "bounding_boxes": [[321, 202, 330, 211]], "future_positions": [[322, 217], [318, 228], [314, 239], [310, 250]], "angle": 25.016893478100016, "speed": 12.641075903577194}, "18": {"centroids": [[322, 219]], "bounding_boxes": [[317, 214, 327, 224]], "future_positions": [[318, 232], [314, 245], [310, 258], [306, 271]], "angle": 27.89727103094763, "speed": 14.689588149434279}, "19": {"centroids": [[322, 219]], "bounding_boxes": [[317, 215, 327, 224]], "future_positions": [[322, 219], [322, 219], [322, 219], [322, 219]], "angle": 0, "speed": 0.0}, "20": {"centroids": [[320, 235]], "bounding_boxes": [[315, 230, 325, 240]], "future_positions": [[318, 251], [316, 267], [314, 283], [312, 299]], "angle": 37.8749836510982, "speed": 17.41447673632487}, "21": {"centroids": [[319, 215]], "bounding_boxes": [[314, 211, 323, 220]], "future_positions": [[318, 195], [317, 175], [316, 155], [315, 135]], "angle": 47.86240522611175, "speed": 21.62698314606085}, "22": {"centroids": [], "bounding_boxes": [], "future_positions": [[318, 195], [317, 175], [316, 155], [315, 135]], "angle": 47.86240522611175, "speed": 0}, "23": {"centroids": [[315, 169]], "bounding_boxes": [[310, 164, 321, 175]], "future_positions": [[311, 123], [307, 77], [303, 31], [299, -15]], "angle": 49.9697407281103, "speed": 49.867472364257644}, "24": {"centroids": [], "bounding_boxes": [], "future_positions": [[311, 123], [307, 77], [303, 31], [299, -15]], "angle": 49.9697407281103, "speed": 0}, "25": {"centroids": [], "bounding_boxes": [], "future_positions": [[311, 123], [307, 77], [303, 31], [299, -15]], "angle": 49.9697407281103, "speed": 0}, "26": {"centroids": [[267, 137]], "bounding_boxes": [[261, 132, 272, 143]], "future_positions": [[219, 105], [171, 73], [123, 41], [75, 9]], "angle": 78.69006752597979, "speed": 62.30392604001773}, "27": {"centroids": [[230, 126]], "bounding_boxes": [[223, 120, 236, 132]], "future_positions": [[193, 115], [156, 104], [119, 93], [82, 82]], "angle": 61.55707137563665, "speed": 41.68855958173657}, "28": {"centroids": [[190, 114]], "bounding_boxes": [[182, 107, 197, 121]], "future_positions": [[150, 102], [110, 90], [70, 78], [30, 66]], "angle": 61.699244233993625, "speed": 45.10212411849358}, "29": {"centroids": [[147, 100]], "bounding_boxes": [[139, 93, 155, 107]], "future_positions": [[104, 86], [61, 72], [18, 58], [-25, 44]], "angle": 63.03428556712986, "speed": 48.83941031585046}, "30": {"centroids": [[103, 86]], "bounding_boxes": [[93, 78, 112, 94]], "future_positions": [[59, 72], [15, 58], [-29, 44], [-73, 30]], "angle": 62.65012421993012, "speed": 49.867472364257644}, "31": {"centroids": [[103, 86]], "bounding_boxes": [[93, 78, 112, 94]], "future_positions": [[103, 86], [103, 86], [103, 86], [103, 86]], "angle": 0, "speed": 0.0}, "32": {"centroids": [[59, 72]], "bounding_boxes": [[51, 65, 67, 79]], "future_positions": [[15, 58], [-29, 44], [-73, 30], [-117, 16]], "angle": 62.65012421993012, "speed": 49.867472364257644}, "33": {"centroids": [[17, 59]], "bounding_boxes": [[10, 52, 25, 66]], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 47.48316754387812}, "34": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "35": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "36": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "37": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "38": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "39": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "40": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "41": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "42": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "43": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "44": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "45": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "46": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "47": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "48": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "49": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "50": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "51": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "52": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "53": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "54": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "55": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "56": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "57": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "58": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "59": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "60": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "61": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "62": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "63": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "64": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "65": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "66": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "67": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "68": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "69": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "70": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "71": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "72": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "73": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "74": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "75": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "76": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "77": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "78": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "79": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "80": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "81": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}, "82": {"centroids": [], "bounding_boxes": [], "future_positions": [[-25, 46], [-67, 33], [-109, 20], [-151, 7]], "angle": 62.19854122006587, "speed": 0}}}
+{
+  "video_info": {
+    "fps": 29.765777488614184,
+    "frame_count": 61,
+    "width": 848,
+    "height": 480
+  },
+  "frames": [
+    {
+      "frame_number": 0,
+      "objects": {
+        "bat": [
+          {
+            "bbox": [
+              446,
+              48,
+              556,
+              103
+            ],
+            "center": [
+              501.0,
+              75.5
+            ],
+            "confidence": 0.5345541834831238
+          }
+        ],
+        "not_a_bowler": [
+          {
+            "bbox": [
+              123,
+              124,
+              167,
+              185
+            ],
+            "center": [
+              145.0,
+              154.5
+            ],
+            "confidence": 0.5313594937324524
+          },
+          {
+            "bbox": [
+              128,
+              321,
+              168,
+              352
+            ],
+            "center": [
+              148.0,
+              336.5
+            ],
+            "confidence": 0.3133068382740021
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              253,
+              301,
+              551,
+              480
+            ],
+            "center": [
+              402.0,
+              390.5
+            ],
+            "confidence": 0.27737507224082947
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 1,
+      "objects": {
+        "bat": [
+          {
+            "bbox": [
+              446,
+              49,
+              556,
+              103
+            ],
+            "center": [
+              501.0,
+              76.0
+            ],
+            "confidence": 0.5589823722839355
+          }
+        ],
+        "not_a_bowler": [
+          {
+            "bbox": [
+              123,
+              124,
+              167,
+              185
+            ],
+            "center": [
+              145.0,
+              154.5
+            ],
+            "confidence": 0.5546748638153076
+          },
+          {
+            "bbox": [
+              127,
+              321,
+              168,
+              352
+            ],
+            "center": [
+              147.5,
+              336.5
+            ],
+            "confidence": 0.3380199670791626
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              253,
+              302,
+              551,
+              480
+            ],
+            "center": [
+              402.0,
+              391.0
+            ],
+            "confidence": 0.2951330542564392
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 2,
+      "objects": {
+        "bat": [
+          {
+            "bbox": [
+              446,
+              43,
+              558,
+              103
+            ],
+            "center": [
+              502.0,
+              73.0
+            ],
+            "confidence": 0.6612350940704346
+          },
+          {
+            "bbox": [
+              393,
+              37,
+              560,
+              103
+            ],
+            "center": [
+              476.5,
+              70.0
+            ],
+            "confidence": 0.34488001465797424
+          }
+        ],
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.41670623421669006
+          },
+          {
+            "bbox": [
+              126,
+              426,
+              170,
+              475
+            ],
+            "center": [
+              148.0,
+              450.5
+            ],
+            "confidence": 0.2523120045661926
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              236,
+              300,
+              569,
+              480
+            ],
+            "center": [
+              402.5,
+              390.0
+            ],
+            "confidence": 0.2502707540988922
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 3,
+      "objects": {
+        "bat": [
+          {
+            "bbox": [
+              426,
+              42,
+              558,
+              101
+            ],
+            "center": [
+              492.0,
+              71.5
+            ],
+            "confidence": 0.49171093106269836
+          },
+          {
+            "bbox": [
+              392,
+              33,
+              562,
+              100
+            ],
+            "center": [
+              477.0,
+              66.5
+            ],
+            "confidence": 0.378872275352478
+          }
+        ],
+        "not_a_bowler": [
+          {
+            "bbox": [
+              126,
+              122,
+              170,
+              182
+            ],
+            "center": [
+              148.0,
+              152.0
+            ],
+            "confidence": 0.4623448848724365
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              199,
+              301,
+              539,
+              480
+            ],
+            "center": [
+              369.0,
+              390.5
+            ],
+            "confidence": 0.2594856321811676
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 4,
+      "objects": {
+        "batsman": [
+          {
+            "bbox": [
+              203,
+              299,
+              526,
+              480
+            ],
+            "center": [
+              364.5,
+              389.5
+            ],
+            "confidence": 0.41444405913352966
+          }
+        ],
+        "bat": [
+          {
+            "bbox": [
+              393,
+              33,
+              565,
+              101
+            ],
+            "center": [
+              479.0,
+              67.0
+            ],
+            "confidence": 0.401946485042572
+          }
+        ],
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.5,
+              153.0
+            ],
+            "confidence": 0.3754618763923645
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 5,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              125,
+              167,
+              185
+            ],
+            "center": [
+              145.5,
+              155.0
+            ],
+            "confidence": 0.4708983600139618
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              271,
+              310,
+              528,
+              480
+            ],
+            "center": [
+              399.5,
+              395.0
+            ],
+            "confidence": 0.4124658703804016
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 6,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              124,
+              168,
+              184
+            ],
+            "center": [
+              146.0,
+              154.0
+            ],
+            "confidence": 0.4403579831123352
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              274,
+              310,
+              530,
+              480
+            ],
+            "center": [
+              402.0,
+              395.0
+            ],
+            "confidence": 0.41484931111335754
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 7,
+      "objects": {
+        "batsman": [
+          {
+            "bbox": [
+              275,
+              311,
+              534,
+              480
+            ],
+            "center": [
+              404.5,
+              395.5
+            ],
+            "confidence": 0.3698744773864746
+          }
+        ],
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              124,
+              167,
+              184
+            ],
+            "center": [
+              145.5,
+              154.0
+            ],
+            "confidence": 0.34827908873558044
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 8,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              122,
+              168,
+              182
+            ],
+            "center": [
+              146.5,
+              152.0
+            ],
+            "confidence": 0.4827920198440552
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              270,
+              306,
+              536,
+              480
+            ],
+            "center": [
+              403.0,
+              393.0
+            ],
+            "confidence": 0.42847684025764465
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 9,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              182
+            ],
+            "center": [
+              146.5,
+              152.5
+            ],
+            "confidence": 0.4167884588241577
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              242,
+              303,
+              538,
+              480
+            ],
+            "center": [
+              390.0,
+              391.5
+            ],
+            "confidence": 0.3160783052444458
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 10,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              125,
+              167,
+              184
+            ],
+            "center": [
+              145.5,
+              154.5
+            ],
+            "confidence": 0.4212650954723358
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              167,
+              476
+            ],
+            "center": [
+              146.0,
+              450.5
+            ],
+            "confidence": 0.2912238538265228
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 11,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              125,
+              167,
+              184
+            ],
+            "center": [
+              145.5,
+              154.5
+            ],
+            "confidence": 0.5179716944694519
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              167,
+              476
+            ],
+            "center": [
+              146.0,
+              450.5
+            ],
+            "confidence": 0.3544265329837799
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 12,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.5,
+              153.0
+            ],
+            "confidence": 0.644428014755249
+          },
+          {
+            "bbox": [
+              125,
+              424,
+              167,
+              475
+            ],
+            "center": [
+              146.0,
+              449.5
+            ],
+            "confidence": 0.349187433719635
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 13,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              169,
+              183
+            ],
+            "center": [
+              147.0,
+              153.0
+            ],
+            "confidence": 0.622653603553772
+          },
+          {
+            "bbox": [
+              125,
+              424,
+              168,
+              475
+            ],
+            "center": [
+              146.5,
+              449.5
+            ],
+            "confidence": 0.30754855275154114
+          }
+        ],
+        "ball": [
+          {
+            "bbox": [
+              164,
+              307,
+              184,
+              319
+            ],
+            "center": [
+              174.0,
+              313.0
+            ],
+            "confidence": 0.2962830364704132
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 14,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              126,
+              122,
+              169,
+              182
+            ],
+            "center": [
+              147.5,
+              152.0
+            ],
+            "confidence": 0.5495373010635376
+          },
+          {
+            "bbox": [
+              131,
+              320,
+              170,
+              350
+            ],
+            "center": [
+              150.5,
+              335.0
+            ],
+            "confidence": 0.3254551291465759
+          }
+        ],
+        "ball": [
+          {
+            "bbox": [
+              175,
+              299,
+              198,
+              313
+            ],
+            "center": [
+              186.5,
+              306.0
+            ],
+            "confidence": 0.5019985437393188
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              244,
+              1,
+              535,
+              302
+            ],
+            "center": [
+              389.5,
+              151.5
+            ],
+            "confidence": 0.43934378027915955
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 15,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              127,
+              128,
+              168,
+              183
+            ],
+            "center": [
+              147.5,
+              155.5
+            ],
+            "confidence": 0.46395212411880493
+          },
+          {
+            "bbox": [
+              130,
+              321,
+              169,
+              350
+            ],
+            "center": [
+              149.5,
+              335.5
+            ],
+            "confidence": 0.31117385625839233
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              244,
+              3,
+              523,
+              317
+            ],
+            "center": [
+              383.5,
+              160.0
+            ],
+            "confidence": 0.2961694300174713
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 16,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              127,
+              127,
+              168,
+              183
+            ],
+            "center": [
+              147.5,
+              155.0
+            ],
+            "confidence": 0.5134408473968506
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              167,
+              475
+            ],
+            "center": [
+              146.0,
+              450.0
+            ],
+            "confidence": 0.401640921831131
+          },
+          {
+            "bbox": [
+              130,
+              321,
+              168,
+              351
+            ],
+            "center": [
+              149.0,
+              336.0
+            ],
+            "confidence": 0.36401665210723877
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              241,
+              3,
+              524,
+              323
+            ],
+            "center": [
+              382.5,
+              163.0
+            ],
+            "confidence": 0.3913635313510895
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 17,
+      "objects": {
+        "batsman": [
+          {
+            "bbox": [
+              241,
+              3,
+              504,
+              321
+            ],
+            "center": [
+              372.5,
+              162.0
+            ],
+            "confidence": 0.5266054272651672
+          },
+          {
+            "bbox": [
+              238,
+              1,
+              427,
+              346
+            ],
+            "center": [
+              332.5,
+              173.5
+            ],
+            "confidence": 0.376790851354599
+          },
+          {
+            "bbox": [
+              224,
+              325,
+              519,
+              480
+            ],
+            "center": [
+              371.5,
+              402.5
+            ],
+            "confidence": 0.2632269263267517
+          }
+        ],
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              124,
+              168,
+              183
+            ],
+            "center": [
+              146.5,
+              153.5
+            ],
+            "confidence": 0.5014365911483765
+          },
+          {
+            "bbox": [
+              132,
+              321,
+              169,
+              351
+            ],
+            "center": [
+              150.5,
+              336.0
+            ],
+            "confidence": 0.38654518127441406
+          },
+          {
+            "bbox": [
+              126,
+              425,
+              166,
+              474
+            ],
+            "center": [
+              146.0,
+              449.5
+            ],
+            "confidence": 0.33978164196014404
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 18,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              126,
+              122,
+              169,
+              182
+            ],
+            "center": [
+              147.5,
+              152.0
+            ],
+            "confidence": 0.6401545405387878
+          },
+          {
+            "bbox": [
+              131,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              150.0,
+              334.5
+            ],
+            "confidence": 0.447450190782547
+          },
+          {
+            "bbox": [
+              126,
+              425,
+              165,
+              473
+            ],
+            "center": [
+              145.5,
+              449.0
+            ],
+            "confidence": 0.26845720410346985
+          }
+        ],
+        "ball": [
+          {
+            "bbox": [
+              234,
+              280,
+              255,
+              295
+            ],
+            "center": [
+              244.5,
+              287.5
+            ],
+            "confidence": 0.6050402522087097
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              237,
+              3,
+              413,
+              350
+            ],
+            "center": [
+              325.0,
+              176.5
+            ],
+            "confidence": 0.3978652358055115
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 19,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              126,
+              122,
+              168,
+              182
+            ],
+            "center": [
+              147.0,
+              152.0
+            ],
+            "confidence": 0.6252578496932983
+          },
+          {
+            "bbox": [
+              131,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              150.0,
+              335.0
+            ],
+            "confidence": 0.43061643838882446
+          },
+          {
+            "bbox": [
+              126,
+              425,
+              165,
+              473
+            ],
+            "center": [
+              145.5,
+              449.0
+            ],
+            "confidence": 0.31286707520484924
+          }
+        ],
+        "ball": [
+          {
+            "bbox": [
+              233,
+              280,
+              255,
+              295
+            ],
+            "center": [
+              244.0,
+              287.5
+            ],
+            "confidence": 0.6209337115287781
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              236,
+              3,
+              412,
+              345
+            ],
+            "center": [
+              324.0,
+              174.0
+            ],
+            "confidence": 0.30704599618911743
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 20,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.5,
+              153.0
+            ],
+            "confidence": 0.6769224405288696
+          },
+          {
+            "bbox": [
+              132,
+              321,
+              169,
+              350
+            ],
+            "center": [
+              150.5,
+              335.5
+            ],
+            "confidence": 0.42405301332473755
+          },
+          {
+            "bbox": [
+              126,
+              426,
+              166,
+              474
+            ],
+            "center": [
+              146.0,
+              450.0
+            ],
+            "confidence": 0.40291348099708557
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              239,
+              4,
+              414,
+              346
+            ],
+            "center": [
+              326.5,
+              175.0
+            ],
+            "confidence": 0.5824690461158752
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 21,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              167,
+              183
+            ],
+            "center": [
+              145.5,
+              153.0
+            ],
+            "confidence": 0.5250648856163025
+          },
+          {
+            "bbox": [
+              131,
+              320,
+              168,
+              350
+            ],
+            "center": [
+              149.5,
+              335.0
+            ],
+            "confidence": 0.2590237557888031
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              170,
+              477
+            ],
+            "center": [
+              147.5,
+              451.0
+            ],
+            "confidence": 0.25572508573532104
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              236,
+              2,
+              417,
+              336
+            ],
+            "center": [
+              326.5,
+              169.0
+            ],
+            "confidence": 0.27188530564308167
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 22,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              167,
+              183
+            ],
+            "center": [
+              145.5,
+              153.0
+            ],
+            "confidence": 0.6526586413383484
+          },
+          {
+            "bbox": [
+              131,
+              320,
+              168,
+              350
+            ],
+            "center": [
+              149.5,
+              335.0
+            ],
+            "confidence": 0.4061445891857147
+          },
+          {
+            "bbox": [
+              125,
+              426,
+              171,
+              477
+            ],
+            "center": [
+              148.0,
+              451.5
+            ],
+            "confidence": 0.2684068977832794
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              235,
+              1,
+              404,
+              349
+            ],
+            "center": [
+              319.5,
+              175.0
+            ],
+            "confidence": 0.5056251883506775
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 23,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              167,
+              183
+            ],
+            "center": [
+              145.5,
+              153.0
+            ],
+            "confidence": 0.6814945936203003
+          },
+          {
+            "bbox": [
+              132,
+              321,
+              168,
+              350
+            ],
+            "center": [
+              150.0,
+              335.5
+            ],
+            "confidence": 0.40066593885421753
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              171,
+              477
+            ],
+            "center": [
+              148.0,
+              451.0
+            ],
+            "confidence": 0.29693713784217834
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 24,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              122,
+              169,
+              182
+            ],
+            "center": [
+              147.0,
+              152.0
+            ],
+            "confidence": 0.7109953165054321
+          },
+          {
+            "bbox": [
+              133,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              151.0,
+              335.0
+            ],
+            "confidence": 0.5528300404548645
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              169,
+              475
+            ],
+            "center": [
+              147.0,
+              450.0
+            ],
+            "confidence": 0.33041542768478394
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              234,
+              0,
+              404,
+              345
+            ],
+            "center": [
+              319.0,
+              172.5
+            ],
+            "confidence": 0.27332979440689087
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 25,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              122,
+              169,
+              182
+            ],
+            "center": [
+              147.0,
+              152.0
+            ],
+            "confidence": 0.7030242085456848
+          },
+          {
+            "bbox": [
+              132,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              150.5,
+              334.5
+            ],
+            "confidence": 0.5361651182174683
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              169,
+              475
+            ],
+            "center": [
+              147.0,
+              450.0
+            ],
+            "confidence": 0.32508179545402527
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              234,
+              1,
+              403,
+              346
+            ],
+            "center": [
+              318.5,
+              173.5
+            ],
+            "confidence": 0.26268133521080017
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 26,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              122,
+              169,
+              182
+            ],
+            "center": [
+              147.0,
+              152.0
+            ],
+            "confidence": 0.7444651126861572
+          },
+          {
+            "bbox": [
+              133,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              151.0,
+              334.5
+            ],
+            "confidence": 0.6031193733215332
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              168,
+              475
+            ],
+            "center": [
+              146.5,
+              450.0
+            ],
+            "confidence": 0.35685858130455017
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              233,
+              1,
+              399,
+              343
+            ],
+            "center": [
+              316.0,
+              172.0
+            ],
+            "confidence": 0.2948688268661499
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 27,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.7109515070915222
+          },
+          {
+            "bbox": [
+              131,
+              321,
+              169,
+              351
+            ],
+            "center": [
+              150.0,
+              336.0
+            ],
+            "confidence": 0.5790400505065918
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              170,
+              476
+            ],
+            "center": [
+              147.5,
+              450.5
+            ],
+            "confidence": 0.36337098479270935
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              230,
+              1,
+              401,
+              348
+            ],
+            "center": [
+              315.5,
+              174.5
+            ],
+            "confidence": 0.4834337532520294
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 28,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              123,
+              123,
+              167,
+              183
+            ],
+            "center": [
+              145.0,
+              153.0
+            ],
+            "confidence": 0.7137276530265808
+          },
+          {
+            "bbox": [
+              131,
+              321,
+              169,
+              351
+            ],
+            "center": [
+              150.0,
+              336.0
+            ],
+            "confidence": 0.548212468624115
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              169,
+              477
+            ],
+            "center": [
+              147.0,
+              451.0
+            ],
+            "confidence": 0.2723832428455353
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              235,
+              0,
+              402,
+              355
+            ],
+            "center": [
+              318.5,
+              177.5
+            ],
+            "confidence": 0.342698335647583
+          },
+          {
+            "bbox": [
+              231,
+              321,
+              526,
+              480
+            ],
+            "center": [
+              378.5,
+              400.5
+            ],
+            "confidence": 0.2867826223373413
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 29,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              122,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              152.5
+            ],
+            "confidence": 0.6850301623344421
+          },
+          {
+            "bbox": [
+              133,
+              320,
+              170,
+              349
+            ],
+            "center": [
+              151.5,
+              334.5
+            ],
+            "confidence": 0.538430392742157
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              169,
+              476
+            ],
+            "center": [
+              147.0,
+              450.5
+            ],
+            "confidence": 0.2859727442264557
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              237,
+              1,
+              406,
+              355
+            ],
+            "center": [
+              321.5,
+              178.0
+            ],
+            "confidence": 0.2642878592014313
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 30,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              122,
+              168,
+              182
+            ],
+            "center": [
+              146.0,
+              152.0
+            ],
+            "confidence": 0.6580862998962402
+          },
+          {
+            "bbox": [
+              133,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              151.0,
+              334.5
+            ],
+            "confidence": 0.4442707300186157
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              238,
+              1,
+              414,
+              355
+            ],
+            "center": [
+              326.0,
+              178.0
+            ],
+            "confidence": 0.5219641327857971
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 31,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              168,
+              182
+            ],
+            "center": [
+              146.0,
+              152.5
+            ],
+            "confidence": 0.6175261735916138
+          },
+          {
+            "bbox": [
+              134,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              151.5,
+              334.5
+            ],
+            "confidence": 0.41308996081352234
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              236,
+              2,
+              409,
+              339
+            ],
+            "center": [
+              322.5,
+              170.5
+            ],
+            "confidence": 0.49243900179862976
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 32,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              124,
+              167,
+              183
+            ],
+            "center": [
+              145.5,
+              153.5
+            ],
+            "confidence": 0.6716547608375549
+          },
+          {
+            "bbox": [
+              133,
+              321,
+              169,
+              351
+            ],
+            "center": [
+              151.0,
+              336.0
+            ],
+            "confidence": 0.44313764572143555
+          },
+          {
+            "bbox": [
+              124,
+              425,
+              169,
+              476
+            ],
+            "center": [
+              146.5,
+              450.5
+            ],
+            "confidence": 0.25235292315483093
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              230,
+              0,
+              408,
+              369
+            ],
+            "center": [
+              319.0,
+              184.5
+            ],
+            "confidence": 0.5331854224205017
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 33,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              124,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.5
+            ],
+            "confidence": 0.6528201103210449
+          },
+          {
+            "bbox": [
+              133,
+              321,
+              170,
+              351
+            ],
+            "center": [
+              151.5,
+              336.0
+            ],
+            "confidence": 0.49063003063201904
+          },
+          {
+            "bbox": [
+              124,
+              425,
+              170,
+              477
+            ],
+            "center": [
+              147.0,
+              451.0
+            ],
+            "confidence": 0.25518882274627686
+          }
+        ],
+        "bat": [
+          {
+            "bbox": [
+              354,
+              88,
+              532,
+              127
+            ],
+            "center": [
+              443.0,
+              107.5
+            ],
+            "confidence": 0.2638913691043854
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 34,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              169,
+              182
+            ],
+            "center": [
+              147.0,
+              152.5
+            ],
+            "confidence": 0.6513059139251709
+          },
+          {
+            "bbox": [
+              134,
+              320,
+              170,
+              349
+            ],
+            "center": [
+              152.0,
+              334.5
+            ],
+            "confidence": 0.47497034072875977
+          }
+        ],
+        "bat": [
+          {
+            "bbox": [
+              352,
+              84,
+              526,
+              127
+            ],
+            "center": [
+              439.0,
+              105.5
+            ],
+            "confidence": 0.44676128029823303
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              227,
+              0,
+              408,
+              371
+            ],
+            "center": [
+              317.5,
+              185.5
+            ],
+            "confidence": 0.2643250524997711
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 35,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              126,
+              122,
+              168,
+              182
+            ],
+            "center": [
+              147.0,
+              152.0
+            ],
+            "confidence": 0.6240065097808838
+          },
+          {
+            "bbox": [
+              132,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              150.5,
+              334.5
+            ],
+            "confidence": 0.5777757167816162
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              230,
+              0,
+              425,
+              330
+            ],
+            "center": [
+              327.5,
+              165.0
+            ],
+            "confidence": 0.47334644198417664
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 36,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              167,
+              183
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.6075431108474731
+          },
+          {
+            "bbox": [
+              132,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              150.5,
+              335.0
+            ],
+            "confidence": 0.5756913423538208
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              232,
+              0,
+              427,
+              306
+            ],
+            "center": [
+              329.5,
+              153.0
+            ],
+            "confidence": 0.34115907549858093
+          }
+        ],
+        "bat": [
+          {
+            "bbox": [
+              359,
+              95,
+              525,
+              129
+            ],
+            "center": [
+              442.0,
+              112.0
+            ],
+            "confidence": 0.3171813189983368
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 37,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.5,
+              153.0
+            ],
+            "confidence": 0.6452717781066895
+          },
+          {
+            "bbox": [
+              132,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              150.5,
+              335.0
+            ],
+            "confidence": 0.5718421936035156
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              232,
+              0,
+              430,
+              299
+            ],
+            "center": [
+              331.0,
+              149.5
+            ],
+            "confidence": 0.3530075252056122
+          }
+        ],
+        "bat": [
+          {
+            "bbox": [
+              359,
+              95,
+              524,
+              129
+            ],
+            "center": [
+              441.5,
+              112.0
+            ],
+            "confidence": 0.318752646446228
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 38,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.5,
+              153.0
+            ],
+            "confidence": 0.6852843165397644
+          },
+          {
+            "bbox": [
+              131,
+              321,
+              168,
+              350
+            ],
+            "center": [
+              149.5,
+              335.5
+            ],
+            "confidence": 0.6077236533164978
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              230,
+              0,
+              388,
+              296
+            ],
+            "center": [
+              309.0,
+              148.0
+            ],
+            "confidence": 0.383103609085083
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 39,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              126,
+              123,
+              168,
+              182
+            ],
+            "center": [
+              147.0,
+              152.5
+            ],
+            "confidence": 0.6553138494491577
+          },
+          {
+            "bbox": [
+              132,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              150.5,
+              335.0
+            ],
+            "confidence": 0.6072881817817688
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              227,
+              0,
+              361,
+              315
+            ],
+            "center": [
+              294.0,
+              157.5
+            ],
+            "confidence": 0.38907289505004883
+          },
+          {
+            "bbox": [
+              235,
+              296,
+              525,
+              480
+            ],
+            "center": [
+              380.0,
+              388.0
+            ],
+            "confidence": 0.2522296905517578
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 40,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              126,
+              123,
+              169,
+              182
+            ],
+            "center": [
+              147.5,
+              152.5
+            ],
+            "confidence": 0.7055407762527466
+          },
+          {
+            "bbox": [
+              132,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              150.5,
+              334.5
+            ],
+            "confidence": 0.6459031701087952
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              226,
+              0,
+              359,
+              350
+            ],
+            "center": [
+              292.5,
+              175.0
+            ],
+            "confidence": 0.5422099828720093
+          },
+          {
+            "bbox": [
+              228,
+              1,
+              396,
+              285
+            ],
+            "center": [
+              312.0,
+              143.0
+            ],
+            "confidence": 0.4282039701938629
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 41,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.5,
+              153.0
+            ],
+            "confidence": 0.6837090253829956
+          },
+          {
+            "bbox": [
+              132,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              150.5,
+              335.0
+            ],
+            "confidence": 0.5760207176208496
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              227,
+              0,
+              432,
+              320
+            ],
+            "center": [
+              329.5,
+              160.0
+            ],
+            "confidence": 0.5372217893600464
+          },
+          {
+            "bbox": [
+              235,
+              298,
+              522,
+              480
+            ],
+            "center": [
+              378.5,
+              389.0
+            ],
+            "confidence": 0.2846623659133911
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 42,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.698275089263916
+          },
+          {
+            "bbox": [
+              130,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              149.5,
+              335.0
+            ],
+            "confidence": 0.4787251949310303
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              224,
+              0,
+              368,
+              289
+            ],
+            "center": [
+              296.0,
+              144.5
+            ],
+            "confidence": 0.6655464768409729
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 43,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.6991623044013977
+          },
+          {
+            "bbox": [
+              129,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              149.0,
+              335.0
+            ],
+            "confidence": 0.4957302212715149
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              224,
+              0,
+              369,
+              299
+            ],
+            "center": [
+              296.5,
+              149.5
+            ],
+            "confidence": 0.6689531207084656
+          },
+          {
+            "bbox": [
+              244,
+              298,
+              523,
+              480
+            ],
+            "center": [
+              383.5,
+              389.0
+            ],
+            "confidence": 0.3240092694759369
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 44,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.7409412860870361
+          },
+          {
+            "bbox": [
+              131,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              150.0,
+              335.0
+            ],
+            "confidence": 0.4490106999874115
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              224,
+              1,
+              366,
+              309
+            ],
+            "center": [
+              295.0,
+              155.0
+            ],
+            "confidence": 0.7136808633804321
+          },
+          {
+            "bbox": [
+              235,
+              299,
+              525,
+              480
+            ],
+            "center": [
+              380.0,
+              389.5
+            ],
+            "confidence": 0.4064914584159851
+          },
+          {
+            "bbox": [
+              230,
+              1,
+              398,
+              261
+            ],
+            "center": [
+              314.0,
+              131.0
+            ],
+            "confidence": 0.40135160088539124
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 45,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              182
+            ],
+            "center": [
+              146.5,
+              152.5
+            ],
+            "confidence": 0.7173900008201599
+          },
+          {
+            "bbox": [
+              132,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              150.5,
+              335.0
+            ],
+            "confidence": 0.511742353439331
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              220,
+              0,
+              367,
+              311
+            ],
+            "center": [
+              293.5,
+              155.5
+            ],
+            "confidence": 0.6076171398162842
+          },
+          {
+            "bbox": [
+              217,
+              20,
+              351,
+              259
+            ],
+            "center": [
+              284.0,
+              139.5
+            ],
+            "confidence": 0.4245435297489166
+          },
+          {
+            "bbox": [
+              227,
+              1,
+              394,
+              260
+            ],
+            "center": [
+              310.5,
+              130.5
+            ],
+            "confidence": 0.2843393385410309
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 46,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.6912698149681091
+          },
+          {
+            "bbox": [
+              129,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              149.0,
+              335.0
+            ],
+            "confidence": 0.5302685499191284
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              220,
+              0,
+              376,
+              323
+            ],
+            "center": [
+              298.0,
+              161.5
+            ],
+            "confidence": 0.6434689164161682
+          },
+          {
+            "bbox": [
+              234,
+              297,
+              524,
+              480
+            ],
+            "center": [
+              379.0,
+              388.5
+            ],
+            "confidence": 0.3752363920211792
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 47,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.5,
+              153.0
+            ],
+            "confidence": 0.6678475737571716
+          },
+          {
+            "bbox": [
+              130,
+              320,
+              168,
+              350
+            ],
+            "center": [
+              149.0,
+              335.0
+            ],
+            "confidence": 0.49326878786087036
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              219,
+              0,
+              378,
+              323
+            ],
+            "center": [
+              298.5,
+              161.5
+            ],
+            "confidence": 0.606262743473053
+          },
+          {
+            "bbox": [
+              216,
+              1,
+              346,
+              272
+            ],
+            "center": [
+              281.0,
+              136.5
+            ],
+            "confidence": 0.5782216191291809
+          },
+          {
+            "bbox": [
+              231,
+              297,
+              525,
+              480
+            ],
+            "center": [
+              378.0,
+              388.5
+            ],
+            "confidence": 0.31971701979637146
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 48,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              125,
+              123,
+              168,
+              183
+            ],
+            "center": [
+              146.5,
+              153.0
+            ],
+            "confidence": 0.6780433058738708
+          },
+          {
+            "bbox": [
+              130,
+              320,
+              169,
+              350
+            ],
+            "center": [
+              149.5,
+              335.0
+            ],
+            "confidence": 0.5935129523277283
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              222,
+              0,
+              377,
+              304
+            ],
+            "center": [
+              299.5,
+              152.0
+            ],
+            "confidence": 0.6430590748786926
+          },
+          {
+            "bbox": [
+              218,
+              3,
+              338,
+              267
+            ],
+            "center": [
+              278.0,
+              135.0
+            ],
+            "confidence": 0.6158209443092346
+          },
+          {
+            "bbox": [
+              217,
+              69,
+              339,
+              254
+            ],
+            "center": [
+              278.0,
+              161.5
+            ],
+            "confidence": 0.37685301899909973
+          },
+          {
+            "bbox": [
+              229,
+              292,
+              523,
+              473
+            ],
+            "center": [
+              376.0,
+              382.5
+            ],
+            "confidence": 0.2784057855606079
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 49,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              124,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.5
+            ],
+            "confidence": 0.6703015565872192
+          },
+          {
+            "bbox": [
+              132,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              150.5,
+              334.5
+            ],
+            "confidence": 0.5465111136436462
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              168,
+              475
+            ],
+            "center": [
+              146.5,
+              450.0
+            ],
+            "confidence": 0.3388579785823822
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              234,
+              1,
+              402,
+              274
+            ],
+            "center": [
+              318.0,
+              137.5
+            ],
+            "confidence": 0.6479013562202454
+          },
+          {
+            "bbox": [
+              232,
+              0,
+              353,
+              361
+            ],
+            "center": [
+              292.5,
+              180.5
+            ],
+            "confidence": 0.6138299703598022
+          },
+          {
+            "bbox": [
+              232,
+              291,
+              525,
+              480
+            ],
+            "center": [
+              378.5,
+              385.5
+            ],
+            "confidence": 0.3844490945339203
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 50,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              124,
+              168,
+              182
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.6096788644790649
+          },
+          {
+            "bbox": [
+              133,
+              321,
+              169,
+              349
+            ],
+            "center": [
+              151.0,
+              335.0
+            ],
+            "confidence": 0.507989764213562
+          },
+          {
+            "bbox": [
+              125,
+              426,
+              167,
+              475
+            ],
+            "center": [
+              146.0,
+              450.5
+            ],
+            "confidence": 0.2977501451969147
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              232,
+              1,
+              403,
+              274
+            ],
+            "center": [
+              317.5,
+              137.5
+            ],
+            "confidence": 0.5507859587669373
+          },
+          {
+            "bbox": [
+              228,
+              0,
+              353,
+              327
+            ],
+            "center": [
+              290.5,
+              163.5
+            ],
+            "confidence": 0.539287805557251
+          },
+          {
+            "bbox": [
+              231,
+              287,
+              527,
+              480
+            ],
+            "center": [
+              379.0,
+              383.5
+            ],
+            "confidence": 0.2941581606864929
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 51,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              124,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.5
+            ],
+            "confidence": 0.6097006797790527
+          },
+          {
+            "bbox": [
+              133,
+              321,
+              169,
+              349
+            ],
+            "center": [
+              151.0,
+              335.0
+            ],
+            "confidence": 0.5302873849868774
+          },
+          {
+            "bbox": [
+              125,
+              426,
+              165,
+              474
+            ],
+            "center": [
+              145.0,
+              450.0
+            ],
+            "confidence": 0.3779778778553009
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              225,
+              0,
+              351,
+              277
+            ],
+            "center": [
+              288.0,
+              138.5
+            ],
+            "confidence": 0.4864223301410675
+          },
+          {
+            "bbox": [
+              230,
+              1,
+              403,
+              279
+            ],
+            "center": [
+              316.5,
+              140.0
+            ],
+            "confidence": 0.37405452132225037
+          },
+          {
+            "bbox": [
+              234,
+              286,
+              525,
+              480
+            ],
+            "center": [
+              379.5,
+              383.0
+            ],
+            "confidence": 0.2654781937599182
+          },
+          {
+            "bbox": [
+              218,
+              114,
+              344,
+              252
+            ],
+            "center": [
+              281.0,
+              183.0
+            ],
+            "confidence": 0.2563555836677551
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 52,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              124,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.5
+            ],
+            "confidence": 0.6330645084381104
+          },
+          {
+            "bbox": [
+              133,
+              321,
+              169,
+              350
+            ],
+            "center": [
+              151.0,
+              335.5
+            ],
+            "confidence": 0.5353811383247375
+          },
+          {
+            "bbox": [
+              125,
+              426,
+              165,
+              474
+            ],
+            "center": [
+              145.0,
+              450.0
+            ],
+            "confidence": 0.3922794759273529
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              230,
+              1,
+              402,
+              280
+            ],
+            "center": [
+              316.0,
+              140.5
+            ],
+            "confidence": 0.5158054232597351
+          },
+          {
+            "bbox": [
+              227,
+              0,
+              351,
+              289
+            ],
+            "center": [
+              289.0,
+              144.5
+            ],
+            "confidence": 0.46274346113204956
+          },
+          {
+            "bbox": [
+              227,
+              291,
+              524,
+              480
+            ],
+            "center": [
+              375.5,
+              385.5
+            ],
+            "confidence": 0.37246766686439514
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 53,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              124,
+              168,
+              182
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.5905248522758484
+          },
+          {
+            "bbox": [
+              133,
+              321,
+              169,
+              349
+            ],
+            "center": [
+              151.0,
+              335.0
+            ],
+            "confidence": 0.5227764844894409
+          },
+          {
+            "bbox": [
+              125,
+              426,
+              165,
+              474
+            ],
+            "center": [
+              145.0,
+              450.0
+            ],
+            "confidence": 0.3664565980434418
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              229,
+              290,
+              524,
+              480
+            ],
+            "center": [
+              376.5,
+              385.0
+            ],
+            "confidence": 0.3558380603790283
+          },
+          {
+            "bbox": [
+              231,
+              1,
+              398,
+              286
+            ],
+            "center": [
+              314.5,
+              143.5
+            ],
+            "confidence": 0.34101036190986633
+          },
+          {
+            "bbox": [
+              227,
+              0,
+              354,
+              313
+            ],
+            "center": [
+              290.5,
+              156.5
+            ],
+            "confidence": 0.26991918683052063
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 54,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              134,
+              321,
+              169,
+              349
+            ],
+            "center": [
+              151.5,
+              335.0
+            ],
+            "confidence": 0.543835461139679
+          },
+          {
+            "bbox": [
+              124,
+              124,
+              168,
+              182
+            ],
+            "center": [
+              146.0,
+              153.0
+            ],
+            "confidence": 0.491524338722229
+          },
+          {
+            "bbox": [
+              126,
+              426,
+              164,
+              474
+            ],
+            "center": [
+              145.0,
+              450.0
+            ],
+            "confidence": 0.28093913197517395
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 55,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              134,
+              321,
+              169,
+              349
+            ],
+            "center": [
+              151.5,
+              335.0
+            ],
+            "confidence": 0.5507354140281677
+          },
+          {
+            "bbox": [
+              124,
+              124,
+              168,
+              183
+            ],
+            "center": [
+              146.0,
+              153.5
+            ],
+            "confidence": 0.48332738876342773
+          },
+          {
+            "bbox": [
+              126,
+              426,
+              165,
+              474
+            ],
+            "center": [
+              145.5,
+              450.0
+            ],
+            "confidence": 0.29839545488357544
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              233,
+              287,
+              525,
+              480
+            ],
+            "center": [
+              379.0,
+              383.5
+            ],
+            "confidence": 0.25041463971138
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 56,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              124,
+              125,
+              167,
+              182
+            ],
+            "center": [
+              145.5,
+              153.5
+            ],
+            "confidence": 0.5409095883369446
+          },
+          {
+            "bbox": [
+              134,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              151.5,
+              334.5
+            ],
+            "confidence": 0.5196236371994019
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              165,
+              474
+            ],
+            "center": [
+              145.0,
+              449.5
+            ],
+            "confidence": 0.35980224609375
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              232,
+              287,
+              523,
+              480
+            ],
+            "center": [
+              377.5,
+              383.5
+            ],
+            "confidence": 0.30250173807144165
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 57,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              134,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              151.5,
+              334.5
+            ],
+            "confidence": 0.6422679424285889
+          },
+          {
+            "bbox": [
+              125,
+              125,
+              168,
+              182
+            ],
+            "center": [
+              146.5,
+              153.5
+            ],
+            "confidence": 0.5382884740829468
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              166,
+              474
+            ],
+            "center": [
+              145.5,
+              449.5
+            ],
+            "confidence": 0.3771323561668396
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              234,
+              285,
+              522,
+              480
+            ],
+            "center": [
+              378.0,
+              382.5
+            ],
+            "confidence": 0.47359177470207214
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 58,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              134,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              151.5,
+              334.5
+            ],
+            "confidence": 0.5533189177513123
+          },
+          {
+            "bbox": [
+              124,
+              125,
+              168,
+              182
+            ],
+            "center": [
+              146.0,
+              153.5
+            ],
+            "confidence": 0.4773091971874237
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              166,
+              474
+            ],
+            "center": [
+              145.5,
+              449.5
+            ],
+            "confidence": 0.326074481010437
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              232,
+              280,
+              524,
+              480
+            ],
+            "center": [
+              378.0,
+              380.0
+            ],
+            "confidence": 0.37283650040626526
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 59,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              135,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              152.0,
+              334.5
+            ],
+            "confidence": 0.5319074988365173
+          },
+          {
+            "bbox": [
+              127,
+              128,
+              169,
+              180
+            ],
+            "center": [
+              148.0,
+              154.0
+            ],
+            "confidence": 0.4141453206539154
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              166,
+              474
+            ],
+            "center": [
+              145.5,
+              449.5
+            ],
+            "confidence": 0.31751224398612976
+          }
+        ],
+        "batsman": [
+          {
+            "bbox": [
+              233,
+              276,
+              520,
+              479
+            ],
+            "center": [
+              376.5,
+              377.5
+            ],
+            "confidence": 0.29993608593940735
+          }
+        ]
+      }
+    },
+    {
+      "frame_number": 60,
+      "objects": {
+        "not_a_bowler": [
+          {
+            "bbox": [
+              134,
+              320,
+              169,
+              349
+            ],
+            "center": [
+              151.5,
+              334.5
+            ],
+            "confidence": 0.5815470814704895
+          },
+          {
+            "bbox": [
+              125,
+              126,
+              169,
+              182
+            ],
+            "center": [
+              147.0,
+              154.0
+            ],
+            "confidence": 0.42099303007125854
+          },
+          {
+            "bbox": [
+              125,
+              425,
+              165,
+              473
+            ],
+            "center": [
+              145.0,
+              449.0
+            ],
+            "confidence": 0.26263177394866943
+          }
+        ]
+      }
+    }
+  ]
+}

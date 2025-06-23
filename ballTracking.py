@@ -629,14 +629,23 @@ import json
     
 #     return tracking_data
 
+
+
+
+
 # def draw_ball_trajectory(tracking_data, display_frame, current_frame_idx):
+#     """Draw the trajectory of the ball with enhanced visualization based on distance analysis"""
+#     import cv2
+#     import numpy as np
     
-#     """Draw the trajectory of the ball based on previous frames"""
 #     # Get past frames to determine trajectory
-#     max_trajectory_length = 20  # Increased for more visible trajectory
+#     max_trajectory_length = 30  # Maximum number of past frames to consider
 #     start_frame = max(0, current_frame_idx - max_trajectory_length)
     
+#     # Collect ball positions from past frames
 #     ball_positions = []
+#     frame_numbers = []
+    
 #     for i in range(start_frame, current_frame_idx):
 #         if i < len(tracking_data["frames"]):
 #             frame_data = tracking_data["frames"][i]
@@ -644,264 +653,360 @@ import json
 #                 # Use the first detected ball (assuming there's only one)
 #                 ball_pos = tuple(map(int, frame_data["objects"]["ball"][0]["center"]))
 #                 ball_positions.append(ball_pos)
+#                 frame_numbers.append(frame_data["frame_number"])
     
-#     # Draw trajectory line if we have ball positions
+#     # If we have ball positions, process the trajectory
 #     if len(ball_positions) > 1:
-#         # Check for start and end conditions based on distances
+#         # Get current frame data
 #         current_frame_data = tracking_data["frames"][current_frame_idx-1]
-#         print(current_frame_data,"framedatsd")
+#         current_frame_number = current_frame_data["frame_number"]
         
-#         # Start condition: Ball is near bowler
+#         # Create a semi-transparent overlay for trajectories
+#         overlay = display_frame.copy()
         
-#         show_trajectory = False
-#         if "distances" in current_frame_data and "ball_to_bowler" in current_frame_data["distances"]:
-#             if current_frame_data["distances"]["ball_to_bowler"] < 200:  # Increased threshold for better detection
-#                 show_trajectory = True
+#         # Identify trajectory phases based on distances
+#         delivery_phase = []  # Ball from bowler to batsman
+#         return_phase = []    # Ball after being hit/played
         
-#         # End condition: Ball is near batsman or bat
-#         end_trajectory = False
-#         if "distances" in current_frame_data:
+#         # Determine phase for each position
+#         for i, pos in enumerate(ball_positions):
+#             frame_idx = frame_numbers[i]
             
-#             if "ball_to_batsman" in current_frame_data["distances"] and current_frame_data["distances"]["ball_to_batsman"] < 167:
-#                 print(current_frame_data.get("distances",{}).get("ball_to_batsman"),"ball_to_batsman distance123")
-#                 end_trajectory = True
-#             elif "ball_to_bat" in current_frame_data["distances"] and current_frame_data["distances"]["ball_to_bat"] < 150:
-#                 print(current_frame_data.get("distances","").get("ball_to_bat"), "ball_to_bat distance123")
-#                 end_trajectory = True
-        
-#         # Always show trajectory for debugging (remove this condition later if needed)
-#         show_trajectory = True
-
-#         if(current_frame_data.get('frame_number',"")==111):
-#             print("insdie the frmae data")
-#             end_trajectory = True
-#             show_trajectory= False
-        
-#         # Draw trajectory if conditions are met
-#         if show_trajectory and not end_trajectory:
-#     # Draw the trajectory lines
-#             for i in range(1, len(ball_positions)):
-#                 if(current_frame_data.get('frame_number',"")<=108):
-                
-#                     cv2.line(display_frame, ball_positions[i-1], ball_positions[i], (0, 255, 255), 3)
+#             # Find the corresponding frame data
+#             frame_data = None
+#             for f in tracking_data["frames"]:
+#                 if f["frame_number"] == frame_idx:
+#                     frame_data = f
+#                     break
             
-#             # Draw a circle at the current position of the ball
-#             # if ball_positions:
-#             #     cv2.circle(display_frame, ball_positions[-1], 7, (255, 0, 0), -1)
+#             if frame_data is None:
+#                 continue
                 
-#             # # Optional: Draw start and end points more distinctly
-#             # if len(ball_positions) > 2:
-#             #     cv2.circle(display_frame, ball_positions[0], 10, (255, 255, 0), -1)  # Start point
+#             # Get distances if available
+#             ball_to_bowler = frame_data.get("distances", {}).get("ball_to_bowler", 999)
+#             ball_to_batsman = frame_data.get("distances", {}).get("ball_to_batsman", 999)
+#             ball_to_bat = frame_data.get("distances", {}).get("ball_to_bat", 999)
+            
+#             # Determine if this is delivery or return phase
+#             if frame_idx < 104:  # Before the key frame where ball likely made contact
+#                 delivery_phase.append(pos)
+#             else:
+#                 return_phase.append(pos)
+        
+#         # Draw the delivery phase trajectory (bowler to batsman)
+#         if len(delivery_phase) > 1:
+#             for i in range(1, len(delivery_phase)):
+#                 # Gradient from green (bowler) to yellow (batsman)
+#                 progress = i / len(delivery_phase)
+#                 color = (0, 255 * (1-progress), 255)  # BGR format: (Blue, Green, Red)
+#                 thickness = 3
+                
+#                 cv2.line(overlay, delivery_phase[i-1], delivery_phase[i], color, thickness)
+        
+#         # Draw the return phase trajectory (after hit/play)
+#         if len(return_phase) > 1:
+#             for i in range(1, len(return_phase)):
+#                 # Use red for the return phase
+#                 cv2.line(overlay, return_phase[i-1], return_phase[i], (0, 0, 255), 3)
+        
+#         # Apply the semi-transparent overlay
+#         alpha = 0.7  # Transparency factor
+#         cv2.addWeighted(overlay, alpha, display_frame, 1 - alpha, 0, display_frame)
+        
+#         # PREDICT FUTURE TRAJECTORY AFTER FRAME 108
+#         if current_frame_number >= 108 and len(return_phase) >= 3:
+#             # Create a special overlay for predicted path
+#             future_overlay = display_frame.copy()
+            
+#             # Make batsman semi-transparent in the overlay
+#             if "batsman" in current_frame_data["objects"] and current_frame_data["objects"]["batsman"]:
+#                 for batsman in current_frame_data["objects"]["batsman"]:
+#                     x1, y1, x2, y2 = map(int, batsman["bbox"])
+#                     batsman_roi = future_overlay[y1:y2, x1:x2]
+#                     # Apply semi-transparency to the batsman region
+#                     batsman_transparent = cv2.addWeighted(batsman_roi, 0.3, np.zeros_like(batsman_roi), 0.7, 0)
+#                     future_overlay[y1:y2, x1:x2] = batsman_transparent
+            
+#             # Use the latest positions to predict future trajectory
+#             if len(return_phase) >= 3:
+#                 # Use the last 3 points to extrapolate future trajectory
+#                 last_points = return_phase[-3:]
+                
+#                 # Calculate direction vector based on the last points
+#                 dx = (last_points[-1][0] - last_points[-3][0]) / 2
+#                 dy = (last_points[-1][1] - last_points[-3][1]) / 2
+                
+#                 # Predict future positions
+#                 future_positions = []
+#                 current_pos = last_points[-1]
+                
+#                 # Define the position of stumps (approximate - should be detected or defined)
+#                 # Assuming stumps are positioned approximately at:
+#                 stump_x = tracking_data["video_info"]["width"] * 0.75  # Adjust as needed
+#                 stump_y = tracking_data["video_info"]["height"] * 0.6   # Adjust as needed
+#                 stumps_width = 30  # Width of stumps in pixels
+#                 stumps_height = 80  # Height of stumps in pixels
+                
+#                 # Draw stumps
+#                 cv2.rectangle(future_overlay, 
+#                               (int(stump_x - stumps_width/2), int(stump_y - stumps_height)), 
+#                               (int(stump_x + stumps_width/2), int(stump_y)), 
+#                               (255, 255, 255), 2)
+#                 cv2.putText(future_overlay, "Stumps", 
+#                           (int(stump_x - 30), int(stump_y - stumps_height - 10)),
+#                           cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
+                
+#                 # Predict 15 future positions
+#                 for i in range(15):
+#                     next_x = int(current_pos[0] + dx)
+#                     next_y = int(current_pos[1] + dy)
+#                     future_positions.append((next_x, next_y))
+#                     current_pos = (next_x, next_y)
+                    
+#                     # Apply some gravity effect for more realistic trajectory
+#                     dy += 0.5  # Ball gradually falls faster
+                
+#                 # Draw the predicted trajectory
+#                 if future_positions:
+#                     start_point = last_points[-1]
+#                     for i, point in enumerate(future_positions):
+#                         # Gradient from red to pink for future trajectory
+#                         alpha_factor = 1 - (i / len(future_positions)) * 0.7  # Decreasing opacity
+                        
+#                         # Draw line with decreasing opacity
+#                         cv2.line(future_overlay, start_point, point, (0, 0, 255), 2)
+                        
+#                         # Draw point with decreasing size
+#                         point_size = max(2, 6 - i // 3)
+#                         cv2.circle(future_overlay, point, point_size, (0, 0, 255), -1)
+                        
+#                         start_point = point
+                
+#                 # Check if trajectory will hit stumps
+#                 will_hit_stumps = False
+#                 for point in future_positions:
+#                     if (stump_x - stumps_width/2 <= point[0] <= stump_x + stumps_width/2 and
+#                         stump_y - stumps_height <= point[1] <= stump_y):
+#                         will_hit_stumps = True
+#                         break
+                
+#                 # Display prediction result
+#                 result_text = "PREDICTION: WILL HIT STUMPS!" if will_hit_stumps else "PREDICTION: WILL MISS STUMPS"
+#                 result_color = (0, 0, 255) if will_hit_stumps else (0, 255, 0)  # Red if hit, green if miss
+                
+#                 cv2.putText(future_overlay, result_text, 
+#                           (50, 50),
+#                           cv2.FONT_HERSHEY_SIMPLEX, 0.8, result_color, 2)
+                
+#                 # Apply the future trajectory overlay
+#                 future_alpha = 0.8  # Higher transparency for the future prediction
+#                 cv2.addWeighted(future_overlay, future_alpha, display_frame, 1 - future_alpha, 0, display_frame)
+        
+#         # Draw ball position markers
+#         if delivery_phase:
+#             # Mark the start of the delivery (near bowler)
+#             cv2.circle(display_frame, delivery_phase[0], 8, (255, 255, 0), -1)  # Yellow
+#             cv2.putText(display_frame, "Release", 
+#                       (delivery_phase[0][0] - 30, delivery_phase[0][1] - 10),
+#                       cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0), 2)
+        
+#         # Mark the contact point if available (frame 102-103)
+#         contact_point = None
+#         min_bat_distance = float('inf')
+        
+#         for f in tracking_data["frames"]:
+#             if "distances" in f and "ball_to_bat" in f["distances"]:
+#                 if f["distances"]["ball_to_bat"] < min_bat_distance:
+#                     min_bat_distance = f["distances"]["ball_to_bat"]
+#                     for obj in f.get("objects", {}).get("ball", []):
+#                         if "center" in obj:
+#                             contact_point = tuple(map(int, obj["center"]))
+        
+#         if contact_point:
+#             cv2.circle(display_frame, contact_point, 10, (0, 0, 255), -1)  # Red
+#             cv2.putText(display_frame, "Contact", 
+#                       (contact_point[0] + 10, contact_point[1] - 10),
+#                       cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
+        
+#         # Draw the current ball position
+#         if ball_positions:
+#             cv2.circle(display_frame, ball_positions[-1], 6, (255, 0, 0), -1)
+        
+#         # Display phase information
+#         display_phase_info(display_frame, current_frame_number)
+        
+#         # Display distance measurements
+#         display_distance_measurements(display_frame, current_frame_data)
+
+# Update the display_phase_info function to include a new prediction phase
+
+def calculate_angle(point1, point2):
+    """
+    Calculate the angle (in degrees) between the line formed by two points and the x-axis.
+    """
+    x1, y1 = point1
+    x2, y2 = point2
+    dx = x2 - x1
+    dy = y2 - y1
+    angle_rad = math.atan2(dy, dx)
+    angle_deg = math.degrees(angle_rad) % 360
+    return angle_deg
+
+def predict_points(start_point, angle, distance_interval=1, num_points=5):
+    """
+    Predict points along a path defined by an angle from a starting point.
+    
+    Args:
+        start_point: Tuple (x, y) - starting coordinate
+        angle: float - angle in degrees from x-axis
+        distance_interval: float - distance between predicted points
+        num_points: int - number of points to predict
+    
+    Returns:
+        List of predicted point tuples
+    """
+    angle_rad = math.radians(angle)
+    x0, y0 = start_point
+    predicted_points = []
+    
+    for i in range(1, num_points + 1):
+        distance = i * distance_interval
+        x = x0 + distance * math.cos(angle_rad)
+        y = y0 + distance * math.sin(angle_rad)
+        predicted_points.append((int(x), int(y)))
+    print(predicted_points)
+    
+    return predicted_points
 
 
 
+
+def get_rectangle_corners_from_flat(points):
+    """
+    Takes a flat list [x1, y1, x2, y2] and returns four corners.
+    Output order: [top_left, top_right, bottom_right, bottom_left]
+    """
+    if len(points) != 4:
+        raise ValueError("Input must be a list or array with exactly four elements [x1, y1, x2, y2].")
+    
+    x1, y1, x2, y2 = points
+
+    top_left = (min(x1, x2), min(y1, y2))
+    top_right = (max(x1, x2), min(y1, y2))
+    bottom_right = (max(x1, x2), max(y1, y2))
+    bottom_left = (min(x1, x2), max(y1, y2))
+
+    return [top_left, top_right, bottom_right, bottom_left]
+
+
+
+
+    
+
+
+
+
+def is_point_in_polygon(polygon, point):
+    print(polygon,"polygon",point)
+    """
+    Check if a point is inside a polygon using the ray-casting algorithm.
+    Works for any convex polygon (including rectangles in any orientation).
+    """
+    x, y = point
+    x=int(x)
+    y=int(y)
+    n = len(polygon)
+    inside = False
+    
+    p1x, p1y = polygon[0]
+    for i in range(n + 1):
+        p2x, p2y = polygon[i % n]
+        if y > min(p1y, p2y):
+            if y <= max(p1y, p2y):
+                if x <= max(p1x, p2x):
+                    if p1y != p2y:
+                        xinters = (y - p1y) * (p2x - p1x) / (p2y - p1y) + p1x
+                    if p1x == p2x or x <= xinters:
+                        inside = not inside
+        p1x, p1y = p2x, p2y
+    
+    return inside
 
 def draw_ball_trajectory(tracking_data, display_frame, current_frame_idx):
-    """Draw the trajectory of the ball with enhanced visualization based on distance analysis"""
-    import cv2
-    import numpy as np
     
+    """Draw the trajectory of the ball based on previous frames"""
     # Get past frames to determine trajectory
-    max_trajectory_length = 30  # Maximum number of past frames to consider
+    max_trajectory_length = 20  # Increased for more visible trajectory
     start_frame = max(0, current_frame_idx - max_trajectory_length)
     
-    # Collect ball positions from past frames
     ball_positions = []
-    frame_numbers = []
-    
     for i in range(start_frame, current_frame_idx):
         if i < len(tracking_data["frames"]):
             frame_data = tracking_data["frames"][i]
             if "ball" in frame_data["objects"] and frame_data["objects"]["ball"]:
                 # Use the first detected ball (assuming there's only one)
                 ball_pos = tuple(map(int, frame_data["objects"]["ball"][0]["center"]))
+                
                 ball_positions.append(ball_pos)
-                frame_numbers.append(frame_data["frame_number"])
     
-    # If we have ball positions, process the trajectory
+    # Draw trajectory line if we have ball positions
     if len(ball_positions) > 1:
-        # Get current frame data
+        
+        # Check for start and end conditions based on distances
         current_frame_data = tracking_data["frames"][current_frame_idx-1]
-        current_frame_number = current_frame_data["frame_number"]
         
-        # Create a semi-transparent overlay for trajectories
-        overlay = display_frame.copy()
         
-        # Identify trajectory phases based on distances
-        delivery_phase = []  # Ball from bowler to batsman
-        return_phase = []    # Ball after being hit/played
+        # Start condition: Ball is near bowler
         
-        # Determine phase for each position
-        for i, pos in enumerate(ball_positions):
-            frame_idx = frame_numbers[i]
+        show_trajectory = False
+        if "distances" in current_frame_data and "ball_to_bowler" in current_frame_data["distances"]:
+            if current_frame_data["distances"]["ball_to_bowler"] < 200:  # Increased threshold for better detection
+                show_trajectory = True
+        
+        # End condition: Ball is near batsman or bat
+        end_trajectory = False
+       
+        if "distances" in current_frame_data:
             
-            # Find the corresponding frame data
-            frame_data = None
-            for f in tracking_data["frames"]:
-                if f["frame_number"] == frame_idx:
-                    frame_data = f
-                    break
-            
-            if frame_data is None:
-                continue
-                
-            # Get distances if available
-            ball_to_bowler = frame_data.get("distances", {}).get("ball_to_bowler", 999)
-            ball_to_batsman = frame_data.get("distances", {}).get("ball_to_batsman", 999)
-            ball_to_bat = frame_data.get("distances", {}).get("ball_to_bat", 999)
-            
-            # Determine if this is delivery or return phase
-            if frame_idx < 104:  # Before the key frame where ball likely made contact
-                delivery_phase.append(pos)
-            else:
-                return_phase.append(pos)
+            if "ball_to_batsman" in current_frame_data["distances"] and current_frame_data["distances"]["ball_to_batsman"] < 167:
+                # print(current_frame_data.get("distances",{}).get("ball_to_batsman"),"ball_to_batsman distance123")
+                end_trajectory = True
+            elif "ball_to_bat" in current_frame_data["distances"] and current_frame_data["distances"]["ball_to_bat"] < 150:
+                # print(end_trajectory, "ball_to_bat distance123")
+                end_trajectory = True
         
-        # Draw the delivery phase trajectory (bowler to batsman)
-        if len(delivery_phase) > 1:
-            for i in range(1, len(delivery_phase)):
-                # Gradient from green (bowler) to yellow (batsman)
-                progress = i / len(delivery_phase)
-                color = (0, 255 * (1-progress), 255)  # BGR format: (Blue, Green, Red)
-                thickness = 3
-                
-                cv2.line(overlay, delivery_phase[i-1], delivery_phase[i], color, thickness)
-        
-        # Draw the return phase trajectory (after hit/play)
-        if len(return_phase) > 1:
-            for i in range(1, len(return_phase)):
-                # Use red for the return phase
-                cv2.line(overlay, return_phase[i-1], return_phase[i], (0, 0, 255), 3)
-        
-        # Apply the semi-transparent overlay
-        alpha = 0.7  # Transparency factor
-        cv2.addWeighted(overlay, alpha, display_frame, 1 - alpha, 0, display_frame)
-        
-        # PREDICT FUTURE TRAJECTORY AFTER FRAME 108
-        if current_frame_number >= 108 and len(return_phase) >= 3:
-            # Create a special overlay for predicted path
-            future_overlay = display_frame.copy()
-            
-            # Make batsman semi-transparent in the overlay
-            if "batsman" in current_frame_data["objects"] and current_frame_data["objects"]["batsman"]:
-                for batsman in current_frame_data["objects"]["batsman"]:
-                    x1, y1, x2, y2 = map(int, batsman["bbox"])
-                    batsman_roi = future_overlay[y1:y2, x1:x2]
-                    # Apply semi-transparency to the batsman region
-                    batsman_transparent = cv2.addWeighted(batsman_roi, 0.3, np.zeros_like(batsman_roi), 0.7, 0)
-                    future_overlay[y1:y2, x1:x2] = batsman_transparent
-            
-            # Use the latest positions to predict future trajectory
-            if len(return_phase) >= 3:
-                # Use the last 3 points to extrapolate future trajectory
-                last_points = return_phase[-3:]
-                
-                # Calculate direction vector based on the last points
-                dx = (last_points[-1][0] - last_points[-3][0]) / 2
-                dy = (last_points[-1][1] - last_points[-3][1]) / 2
-                
-                # Predict future positions
-                future_positions = []
-                current_pos = last_points[-1]
-                
-                # Define the position of stumps (approximate - should be detected or defined)
-                # Assuming stumps are positioned approximately at:
-                stump_x = tracking_data["video_info"]["width"] * 0.75  # Adjust as needed
-                stump_y = tracking_data["video_info"]["height"] * 0.6   # Adjust as needed
-                stumps_width = 30  # Width of stumps in pixels
-                stumps_height = 80  # Height of stumps in pixels
-                
-                # Draw stumps
-                cv2.rectangle(future_overlay, 
-                              (int(stump_x - stumps_width/2), int(stump_y - stumps_height)), 
-                              (int(stump_x + stumps_width/2), int(stump_y)), 
-                              (255, 255, 255), 2)
-                cv2.putText(future_overlay, "Stumps", 
-                          (int(stump_x - 30), int(stump_y - stumps_height - 10)),
-                          cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
-                
-                # Predict 15 future positions
-                for i in range(15):
-                    next_x = int(current_pos[0] + dx)
-                    next_y = int(current_pos[1] + dy)
-                    future_positions.append((next_x, next_y))
-                    current_pos = (next_x, next_y)
-                    
-                    # Apply some gravity effect for more realistic trajectory
-                    dy += 0.5  # Ball gradually falls faster
-                
-                # Draw the predicted trajectory
-                if future_positions:
-                    start_point = last_points[-1]
-                    for i, point in enumerate(future_positions):
-                        # Gradient from red to pink for future trajectory
-                        alpha_factor = 1 - (i / len(future_positions)) * 0.7  # Decreasing opacity
-                        
-                        # Draw line with decreasing opacity
-                        cv2.line(future_overlay, start_point, point, (0, 0, 255), 2)
-                        
-                        # Draw point with decreasing size
-                        point_size = max(2, 6 - i // 3)
-                        cv2.circle(future_overlay, point, point_size, (0, 0, 255), -1)
-                        
-                        start_point = point
-                
-                # Check if trajectory will hit stumps
-                will_hit_stumps = False
-                for point in future_positions:
-                    if (stump_x - stumps_width/2 <= point[0] <= stump_x + stumps_width/2 and
-                        stump_y - stumps_height <= point[1] <= stump_y):
-                        will_hit_stumps = True
-                        break
-                
-                # Display prediction result
-                result_text = "PREDICTION: WILL HIT STUMPS!" if will_hit_stumps else "PREDICTION: WILL MISS STUMPS"
-                result_color = (0, 0, 255) if will_hit_stumps else (0, 255, 0)  # Red if hit, green if miss
-                
-                cv2.putText(future_overlay, result_text, 
-                          (50, 50),
-                          cv2.FONT_HERSHEY_SIMPLEX, 0.8, result_color, 2)
-                
-                # Apply the future trajectory overlay
-                future_alpha = 0.8  # Higher transparency for the future prediction
-                cv2.addWeighted(future_overlay, future_alpha, display_frame, 1 - future_alpha, 0, display_frame)
-        
-        # Draw ball position markers
-        if delivery_phase:
-            # Mark the start of the delivery (near bowler)
-            cv2.circle(display_frame, delivery_phase[0], 8, (255, 255, 0), -1)  # Yellow
-            cv2.putText(display_frame, "Release", 
-                      (delivery_phase[0][0] - 30, delivery_phase[0][1] - 10),
-                      cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0), 2)
-        
-        # Mark the contact point if available (frame 102-103)
-        contact_point = None
-        min_bat_distance = float('inf')
-        
-        for f in tracking_data["frames"]:
-            if "distances" in f and "ball_to_bat" in f["distances"]:
-                if f["distances"]["ball_to_bat"] < min_bat_distance:
-                    min_bat_distance = f["distances"]["ball_to_bat"]
-                    for obj in f.get("objects", {}).get("ball", []):
-                        if "center" in obj:
-                            contact_point = tuple(map(int, obj["center"]))
-        
-        if contact_point:
-            cv2.circle(display_frame, contact_point, 10, (0, 0, 255), -1)  # Red
-            cv2.putText(display_frame, "Contact", 
-                      (contact_point[0] + 10, contact_point[1] - 10),
-                      cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
-        
-        # Draw the current ball position
-        if ball_positions:
-            cv2.circle(display_frame, ball_positions[-1], 6, (255, 0, 0), -1)
-        
-        # Display phase information
-        display_phase_info(display_frame, current_frame_number)
-        
-        # Display distance measurements
-        display_distance_measurements(display_frame, current_frame_data)
+        # Always show trajectory for debugging (remove this condition later if needed)
+        show_trajectory = True
 
-# Update the display_phase_info function to include a new prediction phase
+        # if(current_frame_data.get('frame_number',"")==111):
+        #     print("insdie the frmae data")
+        #     end_trajectory = True
+        #     show_trajectory= False
+        
+        # Draw trajectory if conditions are met
+        # print(end_trajectory,"end_trajectory134")
+        if show_trajectory and not end_trajectory:
+    # Draw the trajectory lines
+            for i in range(1, len(ball_positions)):
+                # if(current_frame_data.get('frame_number',"")<=108):
+                
+                cv2.line(display_frame, ball_positions[i-1], ball_positions[i], (0, 255, 255), 3)
+                
+            
+            # Draw a circle at the current position of the ball
+            # if ball_positions:
+            # 453, 643
+            
+                cv2.circle(display_frame,  (453, 639), 7, (255, 0, 0), -1)
+                
+            # # Optional: Draw start and end points more distinctly
+            # if len(ball_positions) > 2:
+            #     cv2.circle(display_frame, ball_positions[0], 10, (255, 255, 0), -1)  # Start point
+
+
+
+
+
 def display_phase_info(display_frame, current_frame_number):
     """Display the current phase of the ball trajectory"""
     phase_text = ""
@@ -995,7 +1100,6 @@ def display_distance_measurements(display_frame, current_frame_data):
             cv2.circle(display_frame, (330, 125), 8, (0, 0, 255), -1)  # Red when far
 
 
-
 import time
 
 def predictObjects(video_path, model_path):
@@ -1012,6 +1116,7 @@ def predictObjects(video_path, model_path):
     cap = cv2.VideoCapture(video_path)
     fps = cap.get(cv2.CAP_PROP_FPS)
     frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+    print(calculate_angle((440, 592),(452, 639)),"teste124","75.67728002179645" ,predict_points((452, 639), 75.67728002179645))
 
     
     # Data structure to store distance information
@@ -1033,13 +1138,17 @@ def predictObjects(video_path, model_path):
     frame_count = 0
     video_fps = tracking_data["video_info"]["fps"]
     frame_delay = int(1000 / video_fps) 
+    endTracking=False
     
     # Process the video frame by frame
+  
     while cap.isOpened():
         
         ret, frame = cap.read()
         if not ret:
             break
+
+
             
         # Create a copy of the frame for drawing
         display_frame = frame.copy()
@@ -1049,10 +1158,12 @@ def predictObjects(video_path, model_path):
         
         # Initialize objects for this frame
         frame_data = {
-            "frame_number": frame_count,
-            "objects": {},
-            "distances": {}
-        }
+        "frame_number": frame_count,
+        "objects": {},
+        "distances": {}
+    }
+       
+        
 
         key = cv2.waitKey(frame_delay) & 0xFF
         if key == ord('q'):
@@ -1076,7 +1187,7 @@ def predictObjects(video_path, model_path):
                 # Get class information
                 class_id = int(box.cls[0])
                 class_name = model.names[class_id]
-                print(class_name,"cjh")
+                
                 confidence = float(box.conf[0])
                 
                 # Calculate center point of the bounding box
@@ -1087,11 +1198,42 @@ def predictObjects(video_path, model_path):
                 if class_name not in frame_data["objects"]:
                     frame_data["objects"][class_name] = []
                 
+                if(class_name == "batsman"):
+                    print("inside the batsman",[x1, y1, x2, y2])
+                
+                if(class_name == "ball" ):
+                    print("inside the ball345",[center_x, center_y])
+            #         frame_data["objects"][class_name].append({
+            #     "bbox": [x1, y1, x2, y2],
+            #     "center": [center_x, center_y],
+            #     "confidence": confidence
+            # })
+                    if(len(frame_data["objects"]["ball"])>0):
+                    # print(frame_data["objects"]["ball"][-1]["center"],"nfkewn")
+
+                        # is_point_in_polygon([x1, y1, x2, y2],)
+                        print({
+                        "bbox": [x1, y1, x2, y2],
+                        "center": [center_x, center_y],
+                        "confidence": confidence,
+                        "distance":calculate_distance(frame_data["objects"]["ball"][-1]["center"],[center_x, center_y]),
+                    }, "ball234")
                 frame_data["objects"][class_name].append({
                     "bbox": [x1, y1, x2, y2],
                     "center": [center_x, center_y],
                     "confidence": confidence
                 })
+                
+
+                if("batsman" in frame_data["objects"] and "ball" in frame_data["objects"]):
+                    print("inside the ball1224",frame_data["objects"]["batsman"][-1]["bbox"],get_rectangle_corners_from_flat(frame_data["objects"]["batsman"][-1]["bbox"]))
+                    print(is_point_in_polygon(get_rectangle_corners_from_flat(frame_data["objects"]["batsman"][-1]["bbox"]),frame_data["objects"]["batsman"][-1]["center"]),"nfkewn")
+
+
+
+              
+               
+                    
                 
                 # Draw bounding box on the display frame
                 # if(class_name == "bowlers_hand"):
@@ -1123,8 +1265,31 @@ def predictObjects(video_path, model_path):
         tracking_data["frames"].append(frame_data)
         
         # Draw trajectory if ball is detected across frames
-        # if frame_count > 0:
-            # draw_ball_trajectory(tracking_data, display_frame, frame_count)
+        if frame_count > 0:
+            current_frame_data = tracking_data["frames"][frame_count-1]
+
+            if "distances" in current_frame_data:
+            
+                if "ball_to_batsman" in current_frame_data["distances"] and current_frame_data["distances"]["ball_to_batsman"] < 167:
+                    # print(current_frame_data.get("distances",{}).get("ball_to_batsman"),"ball_to_batsman distance123")
+                    end_trajectory = True
+                elif "ball_to_bat" in current_frame_data["distances"] and current_frame_data["distances"]["ball_to_bat"] < 150:
+                    # print(end_trajectory, "ball_to_bat distance123")
+                    end_trajectory = True
+            
+                else:
+                    draw_ball_trajectory(tracking_data, display_frame, frame_count)
+
+
+            
+
+
+
+
+
+
+
+            
         
         # Display the frame with drawings
         cv2.imshow("Cricket Analysis", display_frame)
